@@ -15,11 +15,31 @@
       <a href="#products">Products</a><h2>Our Products</h><a href="shirts.html">Shirts</a>
 👕 View All Shirts
 </a>
-<div style="border:1px solid #ddd;padding:10px;margin:10px;border-radius:10px;">
-<h3>Stylish Shirt</h3>
-<img src="shirt.jpg" width="100%">
-<p>Starting Price ₹300</p>
-<a href="https://wa.me/919981677350?text=Shirt%20order%20karna%20hai">Order Now</a>
+<div style="border:1px solid #ddd;padding:10px;margin:10px;border-radius:10p
+  <div class="product">
+
+  <img src="https://raw.githubusercontent.com/gorelaljhariya7350-ctrl/divyacollection/main/Shirt1.jpg" width="200">
+
+  <h3>Stylish Shirt</h3>
+
+  <p>Price: ₹300</p>
+
+  <!-- SIZE OPTION -->
+  <label>Select Size:</label>
+  <select id="size1">
+    <option value="S">S</option>
+    <option value="M">M</option>
+    <option value="L">L</option>
+    <option value="XL">XL</option>
+  </select>
+
+  <br><br>
+
+  <!-- ORDER BUTTON -->
+  <button onclick="orderNow('Stylish Shirt','300','Shirt1.jpg','size1')">
+    Order Now
+  </button>
+
 </div>
 
 <div style="border:1px solid #ddd;padding:10px;margin:10px;border-radius:10px;">
@@ -124,5 +144,24 @@ style="position:fixed;bottom:80px;right:20px;background:#007bff;color:white;
 padding:12px 18px;border-radius:30px;text-decoration:none;font-weight:bold;
 box-shadow:0 4px 10px rgba(0,0,0,0.3);z-index:999;">
 📞 Call Now
+<script>
+function orderNow(name, price, image, sizeId) {
+
+  var size = document.getElementById(sizeId).value;
+
+  var phone = "9981677350"
+  // 👆 यहाँ अपना WhatsApp number डालो (बिना + के)
+
+  var message = "Hello, mujhe order karna hai:%0A"
+  + "Product: " + name + "%0A"
+  + "Price: ₹" + price + "%0A"
+  + "Size: " + size + "%0A"
+  + "Photo: https://raw.githubusercontent.com/gorelaljhariya7350-ctrl/divyacollection/main/" + image;
+
+  var url = "https://wa.me/" + phone + "?text=" + message;
+
+  window.open(url, '_blank');
+}
+</script>
 </a></body>
 </html>
